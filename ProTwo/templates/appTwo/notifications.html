@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "appTwo/base.html" %}
+{% block sakib %}
+
+<div class="jumbotron">
+  <h1>Here are the free meals</h1>
+
+
+
+  <table>
+    <h4>
+    <tr>
+      <th>Username &nbsp &nbsp</th>
+      <th>Breakfast &nbsp &nbsp</th>
+      <th>Lunch &nbsp &nbsp</th>
+      <th>Dinner</th>
+    </tr>
+    </h4>
+    {% if user.is_authenticated %}
+    {% for meals in meals%}
+    <h5>
+    <tr>
+
+      <td>{{meals.username}}</td>
+      <td>{{meals.breakfast_meal}}</td>
+      <td>{{meals.lunch_meal}}</td>
+      <td>{{meals.dinner_meal}}</td>
+
+    </tr>
+    </h5>
+    {% endfor %}
+    {% endif%}
+  </table>
+
+</div>
+
+
+{% endblock %}

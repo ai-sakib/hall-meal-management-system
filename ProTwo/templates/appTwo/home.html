@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "appTwo/base.html" %}
+{% block sakib %}
+
+        {% if user.is_authenticated %}
+        <h1>Hello {{user.first_name}}!</h1>
+        {% else %}
+        <h1>Hello Everyone !</h1>
+        {% endif %}
+        <h2>Welcome To our Site </h2>
+
+
+{% endblock %}

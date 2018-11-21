@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "appTwo/base.html" %}
+{% block sakib %}
+<div class="jumbotron">
+  {% if registered%}
+  <h1> Thank you {{username}} for set the meal</h1>
+
+  {% else %}
+<h1>Fix your meal:</h1>
+<h4><ul>
+  <form method="post">
+  {% csrf_token %}
+  {{ meal.as_p }}
+
+  <input type="submit" class="btn btn-primary" value="Set Meal">
+  </form>
+</ul></h4>
+{% endif %}
+</div>
+{% endblock %}
